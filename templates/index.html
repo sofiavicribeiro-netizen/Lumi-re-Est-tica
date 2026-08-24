@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lumière Estética</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">Lumière Estética</h1>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#procedimentos">Procedimentos</a>
+        <a href="#equipe">Equipe</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <button class="cta" id="ctaAgendar">Agendar</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-label="Apresentação">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h2>Beleza com ciência e cuidado</h2>
+          <p>Tratamentos estéticos modernos e personalizados para realçar sua confiança.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#procedimentos">Conheça os procedimentos</a>
+            <button class="btn ghost" id="openChat">Assistente Virtual</button>
+          </div>
+        </div>
+        <div class="hero-image" aria-hidden="true">
+          <div class="hero-card">Lumière</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section container">
+      <h3>Sobre a Lumière Estética</h3>
+      <p>
+        Na Lumière Estética oferecemos tratamentos seguros, com profissionais qualificados,
+        equipamentos modernos e protocolos personalizados. Nosso foco é saúde, bem-estar e resultados naturais.
+      </p>
+    </section>
+
+    <section id="procedimentos" class="section container">
+      <div class="section-header">
+        <h3>Procedimentos</h3>
+        <p>Veja abaixo os tratamentos oferecidos e suas explicações. Clique em "Saiba mais" para detalhes.</p>
+      </div>
+
+      <div id="procedures-list" class="procedures-grid" aria-live="polite">
+        <!-- Procedimentos serão carregados via JavaScript -->
+      </div>
+    </section>
+
+    <section id="equipe" class="section container">
+      <h3>Equipe</h3>
+      <div class="team-grid" role="list">
+        <div class="team-card" role="listitem">
+          <div class="avatar">LR</div>
+          <h4>Dra. Laura Ribeiro</h4>
+          <p>Dermatologista e especialista em estética facial.</p>
+        </div>
+        <div class="team-card" role="listitem">
+          <div class="avatar">MF</div>
+          <h4>Mariana F.</h4>
+          <p>Esteticista e técnica em tratamentos corporais.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section container">
+      <h3>Perguntas frequentes</h3>
+      <details>
+        <summary>Os procedimentos são seguros?</summary>
+        <p>Sim. Todos os procedimentos seguem protocolos clínicos e são realizados por profissionais qualificados.</p>
+      </details>
+      <details>
+        <summary>Preciso de avaliação prévia?</summary>
+        <p>Sim. Toda indicação é precedida por avaliação e anamnese para garantir segurança e resultado.</p>
+      </details>
+    </section>
+
+    <section id="contato" class="section container">
+      <h3>Contato</h3>
+      <form id="contact-form" class="contact-form" aria-label="Formulário de contato">
+        <label>Nome
+          <input type="text" name="name" id="name" required />
+        </label>
+        <label>Email
+          <input type="email" name="email" id="email" required />
+        </label>
+        <label>Mensagem
+          <textarea name="message" id="message" rows="4" required></textarea>
+        </label>
+        <div class="contact-actions">
+          <button type="submit" class="btn primary">Enviar</button>
+          <button type="button" class="btn ghost" id="clearContact">Limpar</button>
+        </div>
+        <div id="contact-result" class="form-result" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Assistente Virtual (widget) -->
+  <aside class="chat-widget" id="chatWidget" aria-live="polite">
+    <button id="toggleChat" class="chat-toggle">Assistente</button>
+    <div class="chat-panel" id="chatPanel" hidden>
+      <div class="chat-header">
+        <strong>Assistente Lumière</strong>
+        <button id="closeChat" class="chat-close" aria-label="Fechar">×</button>
+      </div>
+      <div id="chatMessages" class="chat-messages" role="log" aria-live="polite"></div>
+      <form id="chatForm" class="chat-form" aria-label="Formulário do assistente">
+        <input type="text" id="chatInput" placeholder="Como posso ajudar?" autocomplete="off" required />
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Lumière Estética — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="/static/js/scripts.js"></script>
+</body>
+</html>
